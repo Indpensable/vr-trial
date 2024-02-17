@@ -7,7 +7,7 @@ public class FireBulletonTrigger : MonoBehaviour
 {
     public GameObject bullet;
     public Transform spawnPoint;
-    public float bulletSpeed = 20.0f;
+    [SerializeField] private float bulletSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +25,5 @@ public class FireBulletonTrigger : MonoBehaviour
         {
             throw new NotImplementedException();
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -24,12 +24,11 @@ public class TakeDamageOnHitPlayer : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    
+
+    public void DamageTake(int dmg)
     {
-        if (collision.gameObject.CompareTag("Mob"))
-        {
-            CurrentHealth -= 2.5;
-            Debug.Log(CurrentHealth.ToString());
-        }
+        CurrentHealth -= dmg;
+        Debug.Log(CurrentHealth);
     }
 }

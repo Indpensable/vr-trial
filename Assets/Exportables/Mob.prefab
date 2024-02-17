@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 10
+  dmg: 5
 --- !u!136 &-2794446547921718747
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -5,15 +5,16 @@ using UnityEngine.UI;
 
 public class SelectSize : MonoBehaviour
 {
-    [SerializeField] GameObject enemy;
-    [SerializeField] GameObject enemy1;
+    [SerializeField] GameObject genericMob;
+    [SerializeField] GameObject fastMob;
+    [SerializeField] GameObject bigMob;
     [SerializeField] private Slider slider;
     // Start is called before the first frame update
     void Awake()
     {
         slider = GetComponentInParent<Slider>();  
     }
-    private void Start()
+    private void Update()
     {
         UpdateText(slider.value);
         slider.onValueChanged.AddListener(UpdateText);
@@ -24,9 +25,11 @@ public class SelectSize : MonoBehaviour
     {
         float val = slider.value;
         Vector3 scale = new Vector3 (val*0.25f, val*0.25f, val*0.25f); 
-        enemy.transform.localScale= scale;
+        genericMob.transform.localScale= scale;
+        scale = new Vector3(val * 0.25f, val * 0.25f, val * 0.25f);
+        fastMob.transform.localScale = scale;
         scale = new Vector3(val * 0.5f, val * 0.5f, val * 0.5f);
-        enemy1.transform.localScale = scale;
+        bigMob.transform.localScale = scale;
 
     }
 

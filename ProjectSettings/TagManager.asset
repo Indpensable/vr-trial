@@ -6,6 +6,15 @@ TagManager:
   tags:
   - Bullet
   - Mob
+  - Hand
+  - SafeZone
+  - SafeZoneParent
+  - Lower
+  - Upper
+  - Cam
+  - Light
+  - Meme
+  - Gun
   layers:
   - Default
   - TransparentFX

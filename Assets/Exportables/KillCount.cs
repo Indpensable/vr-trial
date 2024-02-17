@@ -11,7 +11,7 @@ public class KillCount : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        kills = 0;
     }
     private void showKills()
     {
@@ -21,6 +21,10 @@ public class KillCount : MonoBehaviour
     public void AddKill()
     {
         kills++;
+        if(kills == 100)
+        {
+
+        }
     }
     // Update is called once per frame
     void Update()
