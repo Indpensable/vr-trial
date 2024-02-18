@@ -1,13 +1,14 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckCollision : MonoBehaviour
 {
-    private GameObject temp;
-    public void OnTriggerEnter(Collider other)
+    private FstSpnSrpt fst;
+    public void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("xxx"))
         {
             StartCoroutine(Engage());
         }
@@ -15,8 +16,8 @@ public class CheckCollision : MonoBehaviour
     IEnumerator Engage()
     {
         yield return new WaitForSeconds(69);
-        temp = GameObject.Find("Script");
-        temp.GetComponent<FstSpnSrpt>().enabled = true;
+        fst = GameObject.Find("Script").GetComponent<FstSpnSrpt>();
+        fst.Engage();
 
     }
 }

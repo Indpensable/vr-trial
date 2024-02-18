@@ -9,11 +9,16 @@ public class SelectSize : MonoBehaviour
     [SerializeField] GameObject fastMob;
     [SerializeField] GameObject bigMob;
     [SerializeField] private Slider slider;
+    private GameObject cam;
+    private float y;
     // Start is called before the first frame update
     void Awake()
     {
-        slider = GetComponentInParent<Slider>();  
+        slider = GetComponentInParent<Slider>();
+        cam = GameObject.FindGameObjectWithTag("Cam");
+        y = cam.transform.position.y;
     }
+
     private void Update()
     {
         UpdateText(slider.value);
@@ -24,11 +29,11 @@ public class SelectSize : MonoBehaviour
     private void UpdateText(float value)
     {
         float val = slider.value;
-        Vector3 scale = new Vector3 (val*0.25f, val*0.25f, val*0.25f); 
+        Vector3 scale = new Vector3 (val*1*y, val*1*y, val*1*y); 
         genericMob.transform.localScale= scale;
-        scale = new Vector3(val * 0.25f, val * 0.25f, val * 0.25f);
+        scale = new Vector3(val * 1*y, val * 1*y, val * 1*y);
         fastMob.transform.localScale = scale;
-        scale = new Vector3(val * 0.5f, val * 0.5f, val * 0.5f);
+        scale = new Vector3(val * 2*y, val * 2*y, val * 2*y);
         bigMob.transform.localScale = scale;
 
     }

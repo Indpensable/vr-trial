@@ -24,7 +24,6 @@ public class TakeDamageOnHitPlayer : MonoBehaviour
         }
     }
 
-    
 
     public void DamageTake(int dmg)
     {

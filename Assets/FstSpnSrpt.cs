@@ -6,15 +6,30 @@ public class FstSpnSrpt : MonoBehaviour
 {
     [SerializeField] private List<Transform> spwnP;
     [SerializeField] private List<GameObject> spwnT;
-    private int check = 0 ;
+    private int time = 3 ;
     // Update is called once per frame
-    void Update()
+
+    private void OnCollisionEnter(Collision other)
     {
-        check++;
-        if (check == 20)
+        if (other.gameObject.CompareTag("Player"))
         {
-            Instantiate(spwnT[Random.Range(0,spwnT.Count)], spwnP[Random.Range(0, spwnP.Count)]);   
-            check = 0 ;
+            StartCoroutine(Init());
         }
+    }
+    public void Engage()
+    {
+        StartCoroutine(Eng());
+    }
+   
+    IEnumerator Init()
+    {
+        yield return new WaitForSeconds(69);
+        Engage();
+    }
+    IEnumerator Eng()
+    {
+        yield return new WaitForSeconds(time);
+        Instantiate(spwnT[Random.Range(0, spwnT.Count)], spwnP[Random.Range(0, spwnP.Count)]);
+        Engage();
     }
 }
